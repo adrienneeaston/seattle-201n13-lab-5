@@ -102,10 +102,24 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+    //first element is the product of the numbers in the array
+
+    var productNumbers = sumAndMultiply(testArray[0], testArray[1], testArray[2])[1];
+    console.log(productNumbers);
+  
+    //second element is a string
+  
+    var string4 = 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + productNumbers + '.';
+    console.log(string4);
+  
+    //returns array with first element and second element
+  
+    return ([productNumbers, string4]);
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
