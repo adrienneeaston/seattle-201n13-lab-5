@@ -7,7 +7,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  sdf
+  var sum = a + b;
+  var string = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
+  return ([sum,string]);
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -23,7 +25,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  var multiply = a * b;
+  var string = 'The product of ' + a + ' and ' + b + ' is ' + multiply + '.'
+  return ([multiply, string]);
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -41,7 +45,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  var abSum = sum(a,b)[0];
+  var abcSum = sum(abSum,c)[0];
+  var abMultiply = multiply(a,b)[0];
+  var abcMultiply = multiply(abMultiply,c)[0];
+  var stringSum = a + ' and ' + b + ' and ' + c + ' sum to ' + abcSum + '.';
+  var stringMultiple = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + abcMultiply + '.';
+  return ([abcSum, abcMultiply, stringSum, stringMultiple]);
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -61,6 +71,19 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+  //first element is the sum of the numbers in the array
+
+  var sumNumbers = sumAndMultiply(testArray[0], testArray[1], testArray[2])[0];
+  console.log(sumNumbers);
+
+  //second element is a string
+
+  var string4 = + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumNumbers + ' is their sum.';
+  console.log(string4);
+
+  //returns array with first element and second element
+
+  return ([sumNumbers, string4]);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
