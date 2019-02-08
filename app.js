@@ -71,6 +71,19 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+  //first element is the sum of the numbers in the array
+
+  var sumNumbers = sumAndMultiply(testArray[0], testArray[1], testArray[2])[0];
+  console.log(sumNumbers);
+
+  //second element is a string
+
+  var string4 = + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumNumbers + ' is their sum.';
+  console.log(string4);
+
+  //returns array with first element and second element
+
+  return ([sumNumbers, string4]);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
